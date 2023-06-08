@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div data-role="page" data-theme="b" id="cinco">
+        <div data-role="header" style="overflow:hidden;">
+            <!--Aqui va la cabeza de la pagina-->
+           <div data-role="navbar" data-iconpos="left">
+                <ul>
+                    <li><button data-icon="home"><a href="#uno">Casa</a></button></li>
+                    <li><button data-icon="grid"><a href="#tres">Vistas</a></button></li>
+                    <li><button data-icon="user" data-theme="b"><a href="#dos">Registro</a></button></li>
+                    <li><button data-icon="bullets"><a href="#cuatro">Detalles</a></button></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!--header-->
+        <div data-role="main" class="ui-content">
+            <!--Aqui va el cuerpo de la pagina-->
+            <div>
+                <img src="./assets/Titulo.PNG" width="330" height="100">
+            </div>
+            <form action=""><!--Formulario del registro de una moto -->
+                
+                
+                
+                <label for="text" style="color:aqua;">Marca</label>
+                <input type="text" name="txtMarca" id="txtMarca" value="">
+                <label for="text" style="color:aqua;">Modelo</label>
+                <input type="text" name="txtModelo" id="txtModelo" value="">
+                <label for="number" style="color:aqua;">Cilindraje: </label>
+                <input type="text" name="txtCilindraje" id="txtCilindraje" value="">
+                <label for="text" style="color:aqua;">Tipo de motor</label>
+                <input type="text" name="txtTipoMotor" id="txtTipoMotor" value="">
+                <label for="text" style="color:aqua;">Capacidad de Tanque</label>
+                <input type="text" name="txtCapacidadTanque" id="txtCapacidadTanque" value="">
+                <label for="text" style="color:aqua;">Transmision</label>
+                <input type="text" name="txtTransmision" id="txtTransmision" value="">
+                <label for="text" style="color:aqua;">Kilometraje:</label>
+                <input type="number" name="txtContraseña" id="txtContraseña" value="">
+                <label for="text" style="color:aqua;">Freno delantero</label>
+                <input type="text" name="txtFrenoDelante" id="txtFrenoDelante" value="">
+                <label for="text" style="color:aqua;">Freno trasero</label>
+                <input type="text" name="txtFrenoTrasero" id="txtFrenoTrasero" value="">
+                <label for="text" style="color:aqua;">Color</label>
+                <input type="text" name="txtColor" id="txtColor" value="">
+                <label for="text" style="color:aqua;">Tipo de arranque</label>
+                <input type="text" name="txtTipoArranque" id="txtTipoArranque" value="">
+                <label for="text" style="color:aqua;">Precio</label>
+                <input type="number" name="txtPrecio" id="txtPrecio" value="">
+                <label for="text" style="color:aqua;">Link</label>
+                <input type="text" name="txtLink" id="txtLink" value="">
+            </form>
+        </div><!--termina el main-->
+        <div data-role="footer">
+            <!--Aqui va el pie de pagina-->
+            <div data-role="navbar" data-grid="d">
+                    <ul>
+                        <li><a href="#uno" class="ui-btn-active">Pag. 1</a></li>
+                        <li><a href="#dos">Pag. 2</a></li>
+                        <li><a href="#tres">Pag. 3</a></li>
+                        <li><a href="#cuatro">Pag. 4</a></li>
+                        <li><a href="#cinco">Pag. 5</a></li>
+                        <li><a href="#seis">Pag. 6</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+        </div><!--termina el footer-->
+    </div>
+</body>
+</html>

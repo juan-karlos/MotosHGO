@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div data-role="page" data-theme="b" id="uno">
+        <div data-role="header" style="overflow:hidden;">
+            <!--Aqui va la cabeza de la pagina-->
+            <div data-role="navbar" data-iconpos="left">
+                <ul>
+                    <li><button data-icon="home"><a href="#uno">Inicio</a></button></li>
+                    <li><button data-icon="user" data-theme="b"><a href="#dos">Registro</a></button></li>
+                    <li><button data-icon="grid"><a href="#tres">Vistas</a></button></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!--header-->
+        <div data-role="main" class="ui-content">
+            <!--Aqui va el cuerpo de la pagina-->
+            <h1>Motos Express</h1>
+            <section id="login" data-role="tres">
+                <header data-role="header">
+                    <h1>Inicio de Sesion como administrador</h1>
+                </header>
+                <article data-role="content">
+                    <form id="form_login" action="/appi/empleado/registro" method="get">
+                        
+                            <img src="https://i.ibb.co/dk6NB2m/df491bf444acfa945630c22389140d4a-icono-de-sombra-de-usuario.png" class="img-fluid" width="300" height="300">
+
+                            
+                                <div data-role="fieldcontain" class="ui-hide-label">
+                                    <label for="txtuser">Nombre de usuario:</label>
+                                    <input type="text" id="txtuser" value="" placeholder="Nombre de usuario" />
+                                </div>
+                                    <div data-role="fieldcontain" class="ui-hide-label">
+                                        <label for="txtpassword">numero de trabajador:</label>
+                                        <input type="password" name="" id="txtpassword" value="" placeholder="Numero de trabajador" />
+                                    </div>
+                                    <button>Acceder</button>
+                            
+                    </form>
+                    <!--<div id="errorMsg" style="background-color:red;color: #FFFFFF;">Usuario o Contraseña no valida</div>-->
+                </article>
+            </section>
+            <!-- Aqui nuestro dialog con el mensaje de error  -->
+            <section id="pageError" data-role="dialog">
+                <header data-role="header">
+                    <h1>Error</h1>
+                </header>
+                <article data-role="content">
+                    <p>Usuario o contraseña no valida</p>
+                    <a href="#" data-role="button" data-rel="back">Aceptar</a>
+                </article>
+            </section>
+        </div><!--termina el main-->
+        
+    </div>
+</body>
+</html>

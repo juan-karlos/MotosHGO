@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div data-role="page" data-theme="b" id="uno">
+        <div data-role="header" style="overflow:hidden;">
+            <!--Aqui va la cabeza de la pagina-->
+            <div data-role="navbar" data-iconpos="left">
+                <ul>
+                    <li><button data-icon="home"><a href="#uno">Inicio</a></button></li>
+                    <li><button data-icon="user" data-theme="b"><a href="#dos">Registro</a></button></li>
+                    <li><button data-icon="grid"><a href="#tres">Vistas</a></button></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!--header-->
+        <div data-role="main" class="ui-content">
+            <!--Aqui va el cuerpo de la pagina-->
+            <h1>Motos Express</h1>
+            <section id="login" data-role="tres">
+                <header data-role="header">
+                    <h1>Inicio de Sesion</h1>
+                </header>
+
+                <article data-role="content">
+                    
+                    <form id="form_login">
+                        <div data-role="fieldcontain" class="ui-hide-label">
+                            <img src="https://i.ibb.co/dk6NB2m/df491bf444acfa945630c22389140d4a-icono-de-sombra-de-usuario.png" class="img-fluid" width="300" height="300">
+                            <label for="txtuser">Usuario:</label>
+                            <input type="text" name="txtuser" id="txtuser" value="" placeholder="Usuario" />
+                        </div>
+                        <div data-role="fieldcontain" class="ui-hide-label">
+                            <label for="txtpassword">Contraseña:</label>
+                            <input type="password" name="txtpassword" id="txtpassword" value="" placeholder="Contraseña" />
+                        </div>
+                        <input type="button" value="Login" id="btnLogin">
+                    </form>
+
+                    <form action="/appi/empleado/" method="get">
+                        <li><button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"><a href="./inicio_admin.ejs"></a> Inicio como administrador</button></li>
+                    </form>
+                    <!--<div id="errorMsg" style="background-color:red;color: #FFFFFF;">Usuario o Contraseña no valida</div>-->
+                </article>
+            </section>
+            <!-- Aqui nuestro dialog con el mensaje de error  -->
+            <section id="pageError" data-role="dialog">
+                <header data-role="header">
+                    <h1>Error</h1>
+                </header>
+                <article data-role="content">
+                    <p>Usuario o contraseña no valida</p>
+                    <a href="#" data-role="button" data-rel="back">Aceptar</a>
+                </article>
+            </section>
+        </div><!--termina el main-->
+        
+    </div>
+
+
+
+
+    <div data-role="page" data-theme="b" id="dos">
+        <div data-role="header" style="overflow:hidden;">
+            <!--Aqui va la cabeza de la pagina-->
+                <div data-role="navbar" data-iconpos="left">
+                    <ul>
+                        <li><button data-icon="home"><a href="#uno">Inicio</a></button></li>
+                        <li><button data-icon="user" data-theme="b"><a href="#dos">Registro</a></button></li>
+                        <li><button data-icon="grid"><a href="#tres">Motos</a></button></li>
+                        
+                    </ul>
+                </div><!-- /navbar -->
+        </div><!--header-->
+        <div data-role="main" class="ui-content">
+            <!--Aqui va el cuerpo de la pagina-->
+
+            <h1>Motos Express</h1>
+            <!--Boton de inicio de sesion-->
+            <a href="#popupLogin" data-rel="popup" data-position-to="window"
+                class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a"
+                data-transition="pop">Iniciar sesion</a>
+            <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+
+                <form>
+                    <div style="padding:10px 20px;">
+                        <h3>Por favor, registrese</h3>
+                        <label for="un" class="ui-hidden-accessible">Nombre:</label>
+                        <input type="text" name="user" id="un" value="" placeholder="Nombre" data-theme="a">
+                        <label for="pw" class="ui-hidden-accessible">Contraseña:</label>
+                        <input type="password" name="pass" id="pw" value="" placeholder="Contraseña" data-theme="a">
+                        <button type="submit"
+                            class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">iniciar</button>
+                    </div>
+                </form>
+            </div><!--cierre de boton-->
+
+            <!--Campos del registro-->
+            <form action="/api/cliente/insertar" method="post">
+                <!--seccion de registro-->
+                <h2>Registro</h2>
+                <label for="txtNombre">Nombre</label>
+                <input type="text" name="Nombre" id="txtNombre">
+                <label for="txtApellidoPaterno">Apellidos</label>
+                <input type="text" name="Apellidos" id="txtApellidoPaterno">
+                <label for="tel">Telefono:</label>
+                <input type="number" name="Telefono" id="txtTelefono" value="">
+                <label for="txtCorreo">Correo Electronico</label>
+                <input type="email" name="correo" id="txtCorreo">
+                <label for="txtDireccion">Direccion</label>
+                <input type="text" name="Direccion" id="txtDireccion">
+                <label for="password">Contraseña:</label>
+                <input type="password" name="Contraseña" id="txtContraseña" value="" autocomplete="off">
+                <!----seccion de fecha-->
+                <label for="date-1">Fecha de Nacimiento</label>
+                <input type="datetime"  name="Fecha_nacimiento"  value="AA/MM/DD">
+                <!--seccion de solicitud de datos-->
+                <!-- <h3>INGRESE SU CREDENCIAL Y SU CURP PARA SER VALIDADO EN FORMATO .PDF</h3>
+                <label for="file-1">"Ingrese su INE"</label>
+                <input type="file" data-clear-btn="false" name="file-1" id="file-1" value="">
+                <label for="file-2">"Ingrese su CURP"</label>
+                <input type="file" data-clear-btn="true" name="file-2" id="file-2" value=""> -->
+                <!--Boton de enviar-->
+                <li><button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action"><a href=""></a> Guardar</button></li>
+                
+            </form><!--Cierre de campos de registro-->
+        </div><!--termina el main-->
+    </div>
+</body>
+</html>
